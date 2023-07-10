@@ -24,8 +24,10 @@ defmodule Delivery.User do
     timestamps()
   end
 
-  def changeset(params) do
-    %__MODULE__{}
+   def build(changeset), do: apply_action(changeset, :create)
+
+  def changeset(struct \\ %__MODULE__{}, params) do
+    struct
     |> cast(params, @required_params)
     |> validate_required(@required_params)
     |> validate_length(:password_hash, min: 6)

@@ -9,4 +9,7 @@ defmodule DeliveryWeb.UsersView do
       user: user
     }
   end
+
+  def render("user.json", %{user: %User{} = user}), do: %{user: user}
+
 end
