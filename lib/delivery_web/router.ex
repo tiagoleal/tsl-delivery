@@ -9,6 +9,7 @@ defmodule DeliveryWeb.Router do
     pipe_through :api
 
     get "/", WelcomeController, :index
+    resources "/users", UsersController, except: [:new, :edit]
   end
 
   # Enables LiveDashboard only for development
