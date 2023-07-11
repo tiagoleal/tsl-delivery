@@ -10,7 +10,15 @@ defmodule Delivery.MixProject do
       compilers: [:phoenix, :gettext] ++ Mix.compilers(),
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
-      deps: deps()
+      deps: deps(),
+      test_coverage: [tool: ExCoveralls],
+      preferred_cli_env: [
+        coveralls: :test,
+        "coveralls.detail": :test,
+        "coveralls.post": :test,
+        "coveralls.html": :test
+      ]
+
     ]
   end
 
@@ -45,6 +53,13 @@ defmodule Delivery.MixProject do
       {:plug_cowboy, "~> 2.0"},
       {:credo, "~> 1.7", only: [:dev, :test], runtime: false},
       {:pbkdf2_elixir, "~> 1.3"},
+      {:excoveralls, "~> 0.10", only: :test},
+      {:ex_machina, "~> 2.7.0"},
+      {:tesla, "~> 1.4.0"},
+      {:hackney, "~> 1.17.0"},
+      {:bypass, "~> 2.1", only: :test},
+      {:mox, "~> 1.0", only: :test},
+      {:guardian, "~> 2.0"}
     ]
   end
 
