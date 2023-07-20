@@ -18,7 +18,7 @@ defmodule Delivery.Users.CreateTest do
 
       response = Create.call(params)
 
-      assert {:ok, %User{id: _id, age: 27, email: "rafael@banana.com"}} = response
+      assert {:ok, %User{id: _id, age: 27, email: "tiago@botwave.com"}} = response
     end
 
     test "when there are invalid params, returns an error" do

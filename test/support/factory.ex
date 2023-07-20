@@ -7,7 +7,7 @@ defmodule Delivery.Factory do
     %{
       "age" => 27,
       "address" => "Rua das bananeiras, 15",
-      "cep" => "12345678",
+      "cep" => "96820616",
       "cpf" => "12345678901",
       "email" => "tiago@botwave.com",
       "password" => "123456",
@@ -31,7 +31,7 @@ defmodule Delivery.Factory do
   def cep_info_factory do
     %{
       "bairro" => "Sé",
-      "cep" => "01001-000",
+      "cep" => "12345678",
       "complemento" => "lado ímpar",
       "ddd" => "11",
       "gia" => "1004",
