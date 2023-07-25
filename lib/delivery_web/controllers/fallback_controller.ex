@@ -10,4 +10,5 @@ defmodule DeliveryWeb.FallbackController do
     |> put_view(ErrorView)
     |> render("error.json", result: result)
   end
+
 end
