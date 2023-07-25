@@ -15,7 +15,6 @@ defmodule Delivery.Users.Create do
     end
   end
 
-
   defp client do
     :delivery
     |> Application.fetch_env!(__MODULE__)

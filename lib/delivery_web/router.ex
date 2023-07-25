@@ -8,13 +8,24 @@ defmodule DeliveryWeb.Router do
     plug UUIDChecker
   end
 
+  pipeline :auth do
+    plug DeliveryWeb.Auth.Pipeline
+  end
+
+  scope "/api", DeliveryWeb do
+    pipe_through [:api, :auth]
+
+    resources "/users", UsersController, except: [:new, :edit, :create]
+    post "/items", ItemsController, :create
+    post "/orders", OrdersController, :create
+  end
+
   scope "/api", DeliveryWeb do
     pipe_through :api
 
     get "/", WelcomeController, :index
-    resources "/users", UsersController, except: [:new, :edit]
-    post "/items", ItemsController, :create
-    post "/orders", OrdersController, :create
+    post "/users/", UsersController, :create
+    post "/users/signin", UsersController, :sign_in
   end
 
   # Enables LiveDashboard only for development

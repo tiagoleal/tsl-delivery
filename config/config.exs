@@ -10,12 +10,20 @@ use Mix.Config
 config :delivery,
   ecto_repos: [Delivery.Repo]
 
-config :Delivery, Delivery.Users.Create,
+config :delivery, Delivery.Users.Create,
   via_cep_adapter: Delivery.ViaCep.Client
 
 config :delivery, Delivery.Repo,
   migration_primary_key: [type: :binary_id],
   migration_foreign_key: [type: :binary_id]
+
+config :delivery, DeliveryWeb.Auth.Guardian,
+  issuer: "delivery",
+  secret_key: "bspFhomWyn4eP1XY5oT12NLUa5mf2hsJAain6B4vHcODxY5ErpuZAPQ0kQ30i4P6"
+
+config :delivery, DeliveryWeb.Auth.Pipeline,
+  module: DeliveryWeb.Auth.Guardian,
+  error_handler: DeliveryWeb.Auth.ErrorHandler
 
 # Configures the endpoint
 config :delivery, DeliveryWeb.Endpoint,
