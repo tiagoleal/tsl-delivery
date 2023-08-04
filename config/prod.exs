@@ -15,7 +15,7 @@ use Mix.Config
 
 config :delivery, DeliveryWeb.Repo,
   adapter: Ecto.Adapters.Postgres,
-  url: {:system, "ecto://84ef90ac-7715-4d9c-8aa0-0c640e580e1c-user:pw-8886438b-28ca-48d9-a2f4-d4aeefb4bb34@postgres-free-tier-v2020.gigalixir.com:5432/84ef90ac-7715-4d9c-8aa0-0c640e580e1c"},
+  url: {:system, "postgresql://84ef90ac-7715-4d9c-8aa0-0c640e580e1c-user:pw-8886438b-28ca-48d9-a2f4-d4aeefb4bb34@postgres-free-tier-v2020.gigalixir.com:5432/84ef90ac-7715-4d9c-8aa0-0c640e580e1c"},
   database: "delivery",
   ssl: true,
   pool_size: 2
